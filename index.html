@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Choose a Side</title>
+    <style>
+        html {
+            min-height: 100%;
+            position: relative;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            text-align: center;
+            font-family: "Unity", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+            font-size: 50pt;
+        }
+
+        .side {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        #kuo {
+            left: 0;
+            background-color: #0257B8;
+        }
+
+        #kuo:hover {
+            background-color: #02A9E0;
+        }
+
+        #larry {
+            right: 0;
+            background-color: #BC0200;
+        }
+
+        #larry:hover {
+            background-color: #F20300;
+        }
+
+        .name {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="kuo" class="side">
+        <span class="name">Kuoyuan Yang</span>
+    </div>
+    <div id="larry" class="side">
+        <span class="name">Lawrence D. Steele</span>
+    </div>
+    <script>
+        function resize() {
+            var names = document.getElementsByClassName("name"),
+                h = document.getElementsByClassName("side")[0].clientHeight;
+            names[0].style.lineHeight = h / 75.0;
+            names[1].style.lineHeight = h / 75.0;
+        }
+        window.addEventListener("load", resize, false);
+        window.addEventListener("resize", resize, false);
+    </script>
+</body>
+
+</html>
