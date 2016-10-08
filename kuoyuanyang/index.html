@@ -926,12 +926,14 @@
     </script>
 
     <script>
-    var donateButtons = document.querySelectorAll("label[for^=cta-hero_amount_]")
-    for(var i = 0; i < donateButtons.length; i++) {
-      var button = donateButtons[i];
-      var href = "https://venmo.com/Kuoyuan-Yang?amount=" + button.children[0].value;
-      button.children[1].innerHTML = "<a href='" + href + "'>" + button.children[1].innerHTML + "</a>";
-    }
+    window.addEventListener("load", function() {
+      var donateButtons = document.querySelectorAll("label[for^=cta-hero_amount_]")
+      for(var i = 0; i < donateButtons.length; i++) {
+        var button = donateButtons[i];
+        var href = "https://venmo.com/Kuoyuan-Yang?amount=" + button.children[0].value;
+        button.children[1].innerHTML = "<a href='" + href + "'>" + button.children[1].innerHTML + "</a>";
+      }
+    });
     </script>
 
     <script type="text/javascript">!function(){var ravenLoaded=!1,ravenCallsQueue=[],onErrorQueue=[];window.Raven={};var ravenShimMethods=["captureException","captureMessage","setUserContext"];ravenShimMethods.forEach(function(method){window.Raven[method]=function(){ravenLoaded||ravenCallsQueue.push({method:method,args:[].slice.call(arguments)})}}),window.onerror=function(){ravenLoaded||onErrorQueue.push({context:this,args:[].slice.call(arguments)})},window.onunhandledrejection=function(evt){Raven.captureException(evt.reason)},window._ravenOnLoad=function(){ravenLoaded=!0;var ravenOptions={ignoreErrors:["top.GLOBALS","originalCreateNotification","canvas.contentDocument","MyApp_RemoveAllHighlights","ComboSearch is not defined","http://loading.retry.widdit.com/","atomicFindClose","fb_xd_fragment","bmi_SafeAddOnload","EBCallBackMessageReceived","conduitPage","twttr is not defined","Error calling method on NPObject.","$$LGBrowser_ReadModeBridge is not defined","Can't find variable: __gCrWeb"],ignoreUrls:[/graph\.facebook\.com/i,/connect\.facebook\.net\/en_US\/all\.js/i,/extensions\//i,/^chrome:\/\//i]};Raven.config("https://830bd0d466d54bfea9d0ce74acb7f7ec@sentry.dev.thegroundwork.com/122",ravenOptions).install(),ravenCallsQueue.forEach(function(callInfo){window.Raven[callInfo.method].apply(window.Raven,callInfo.args)}),onErrorQueue.forEach(function(errorInfo){window.onerror.apply(errorInfo.context,errorInfo.args)})}}();</script>
